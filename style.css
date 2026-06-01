@@ -1,0 +1,304 @@
+/* ===== CSS Variables for Easy Theming ===== */
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --income-color: #10b981;
+    --expense-color: #ef4444;
+    --background: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+}
+
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ===== Balance Section ===== */
+.balance-section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance-section h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.balance {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===== Summary Section ===== */
+.summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.summary-item {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.summary-item h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.money {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.plus {
+    color: var(--income-color);
+}
+
+.minus {
+    color: var(--expense-color);
+}
+
+/* ===== Form Section ===== */
+.form-section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.form-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-secondary);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== History Section ===== */
+.history-section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.history-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.transaction-list {
+    list-style: none;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: var(--background);
+    border-radius: 8px;
+    border-left: 4px solid;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transaction-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.transaction-item.income {
+    border-left-color: var(--income-color);
+}
+
+.transaction-item.expense {
+    border-left-color: var(--expense-color);
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-description {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+}
+
+.transaction-amount {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.transaction-amount.income {
+    color: var(--income-color);
+}
+
+.transaction-amount.expense {
+    color: var(--expense-color);
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: var(--expense-color);
+    color: white;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 20px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .balance {
+        font-size: 2rem;
+    }
+
+    .money {
+        font-size: 1.25rem;
+    }
+
+    .summary {
+        gap: 10px;
+    }
+
+    .summary-item {
+        padding: 15px;
+    }
+}

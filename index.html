@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>💰 Expense Tracker</h1>
+        </header>
+
+        <!-- Balance Display -->
+        <section class="balance-section">
+            <h2>Your Balance</h2>
+            <p id="balance" class="balance">$0.00</p>
+        </section>
+
+        <!-- Income and Expense Summary -->
+        <section class="summary">
+            <div class="summary-item income-box">
+                <h3>Income</h3>
+                <p id="income" class="money plus">+$0.00</p>
+            </div>
+            <div class="summary-item expense-box">
+                <h3>Expense</h3>
+                <p id="expense" class="money minus">-$0.00</p>
+            </div>
+        </section>
+
+        <!-- Add Transaction Form -->
+        <section class="form-section">
+            <h3>Add New Transaction</h3>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input 
+                        type="text" 
+                        id="description" 
+                        placeholder="Enter description..." 
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="amount">
+                        Amount <span class="hint">(negative = expense, positive = income)</span>
+                    </label>
+                    <input 
+                        type="number" 
+                        id="amount" 
+                        placeholder="Enter amount..." 
+                        step="0.01"
+                        required
+                    >
+                </div>
+                <button type="submit" class="btn">Add Transaction</button>
+            </form>
+        </section>
+
+        <!-- Transaction History -->
+        <section class="history-section">
+            <h3>Transaction History</h3>
+            <ul id="transaction-list" class="transaction-list">
+                <!-- Transactions will be added here by JavaScript -->
+            </ul>
+            <p id="empty-message" class="empty-message">No transactions yet. Add one above!</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
